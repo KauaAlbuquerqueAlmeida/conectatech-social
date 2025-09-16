@@ -1,3 +1,4 @@
+<!-- Nomes: Kauã de Albuquerque Almeida, Matheus Villar e Miguel Borges -->
 <?php
 
 require_once '../app/controllers/AuthController.php';

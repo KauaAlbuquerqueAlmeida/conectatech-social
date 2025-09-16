@@ -1,19 +1,26 @@
+<!-- Nomes: Kauã de Albuquerque Almeida, Matheus Villar e Miguel Borges -->
 <?php
+
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 session_start();
 require_once '../app/controllers/ApiController.php';
 
-$loggedIn = isset($_SESSION['users']);
-$email = $loggedIn ? $_SESSION['email'] : null;
-$name = $loggedIn ? $_SESSION['name'] : null;
+$loggedIn = isset($_SESSION['user_id']); // corrigi aqui
+$email = $loggedIn ? $_SESSION['user_email'] : null; // ou $_SESSION['email'] se você salvar isso no login
+$name  = $loggedIn ? $_SESSION['user_name'] : null;
 
 $friends = [];
 
 if ($loggedIn) {
     try {
         $host = 'localhost';
-        $dbname = 'nome_do_banco'; // troque pelo seu
-        $user = 'root';            // seu usuário MySQL
-        $pass = '';                // sua senha MySQL
+        $dbname = 'conectatech'; // seu banco real
+        $user = 'root';          // usuário MySQL
+        $pass = '';              // senha do MySQL
         $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $user, $pass);
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 

@@ -1,3 +1,4 @@
+<!-- Nomes: Kauã de Albuquerque Almeida, Matheus Villar e Miguel Borges -->
 <?php
 session_start();
 error_reporting(E_ALL);

@@ -1,3 +1,4 @@
+<!-- Nomes: Kauã de Albuquerque Almeida, Matheus Villar e Miguel Borges -->
 <?php
 session_start();
 require_once "../config/database.php"; // Caminho correto para o seu arquivo de conexão
@@ -5,6 +6,7 @@ require_once "../config/database.php"; // Caminho correto para o seu arquivo de 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = trim($_POST['email']);
     $password = trim($_POST['password']);
+    $_SESSION['user_email'] = $user['email'];
 
     $sql = "SELECT * FROM users WHERE email = ?";
     $stmt = $pdo->prepare($sql); // Usando $pdo de database.php
