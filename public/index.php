@@ -3,7 +3,7 @@ session_start();
 require_once '../app/controllers/ApiController.php';
 
 // Checa se usuário está logado
-$loggedIn = isset($_SESSION['user_id']);
+$loggedIn = isset($_SESSION['users']);
 ?>
 
 <!DOCTYPE html>
@@ -83,7 +83,17 @@ $loggedIn = isset($_SESSION['user_id']);
 </head>
 <body>
 
-<header>ConectaTech Social</header>
+<header>
+    ConectaTech Social
+    <h1>Login</h1>
+    <?php if($loggedIn): ?>
+        <p>Bem-vindo, <?php echo htmlspecialchars($_SESSION['user_name']); ?>! <a href="logout.php" style="color:#00d8ff;">Sair</a></p>
+    <?php else: ?>
+        <p><a href="login.php" style="color:#00d8ff;">
+        Login</a> | <a href="register.php" style="color:#00d8ff;">Registrar</a></p>
+    <?php endif; ?>
+
+</header>
 
 <?php if($loggedIn): ?>
     <div id="show-post-btn">
