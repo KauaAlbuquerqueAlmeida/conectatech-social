@@ -1,6 +1,7 @@
 <?php
 session_start();
-require_once "../config/database.php"; // Caminho correto para o seu arquivo de conexão
+include "conexao.php"; 
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = trim($_POST['email']);
