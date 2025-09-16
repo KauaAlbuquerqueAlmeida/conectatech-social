@@ -119,11 +119,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             color: #fff;
             text-decoration: underline;
         }
+
+        .register-container img {
+            width: 150px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
     </style>
 
 </head>
 <body>
     <div class="register-container">
+        <img src="../assets/imagens/Conectatechpng.png" alt="">
         <h2>Cadastro</h2>
 
         <?php if (!empty($mensagem)) echo "<div class='mensagem'>$mensagem</div>"; ?>
