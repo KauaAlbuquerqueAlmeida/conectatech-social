@@ -116,11 +116,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             color: #fff;
             text-decoration: underline;
         }
+
+        .login-container img {
+            width: 150px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
     </style>
 </head>
 <body>
 
     <div class="login-container">
+        <img src="../assets/imagens/Conectatechpng.png" alt="">
         <h2>Login</h2>
         <?php if (!empty($erro)) echo "<p class='erro'>$erro</p>"; ?>
 
