@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 require_once '../app/controllers/AuthController.php';
 
 $mensagem = ""; // Variável para mostrar dentro da div
